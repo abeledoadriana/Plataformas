@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Octavos 2025</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f3f6fa;
+      color: #333;
+    }
+
+    header, footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    main {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Estilos de pestañas */
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tab {
+      padding: 10px 15px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #555;
+      border-radius: 10px 10px 0 0;
+      transition: 0.3s;
+    }
+
+    .tab:hover {
+      background-color: #e0ebff;
+    }
+
+    .tab.active {
+      background-color: #4a90e2;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    img {
+      border-radius: 10px;
+      margin-top: 15px;
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✍️ Octavos 2025 ✍️</h1>
+    <p>¡Ejercicios!</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Actividad: Videojuegos con plataformas</h2>
+
+      <!-- PESTAÑAS -->
+      <div class="tabs">
+        <div class="tab active" data-tab="1">Paso 1</div>
+        <div class="tab" data-tab="2">Paso 2</div>
+        <div class="tab" data-tab="3">Paso 3</div>
+        <div class="tab" data-tab="4">Paso 4</div>
+        <div class="tab" data-tab="5">Paso 5</div>
+        <div class="tab" data-tab="6">Paso 6</div>
+      </div>
+
+      <!-- CONTENIDO -->
+      <div id="tab-1" class="tab-content active">
+        <p>🔹 Comenzar</p>
+        <img src="images/1.png" alt="Paso 1">
+      </div>
+
+      <div id="tab-2" class="tab-content">
+        <p>🔹Dibujar plataformas</p>
+        <img src="images/2.png" alt="Paso 2">
+      </div>
+
+      <div id="tab-3" class="tab-content">
+        <p>🔹 My tyles</p>
+        <img src="images/3.png" alt="Paso 3">
+      </div>
+
+      <div id="tab-4" class="tab-content">
+        <p>🔹 Hacer que el jugador caiga en picada.</p>
+        <img src="images/4.png" alt="Paso 4">
+      </div>
+
+      <div id="tab-5" class="tab-content">
+        <p>🔹 Convertir los cuadrados en monedas</p>
+        <img src="images/5.png" alt="Paso 5">
+      </div>
+
+      <div id="tab-6" class="tab-content">
+        <p>🔹 Hacer saltar al personaje.</p>
+        <img src="images/6.png" alt="Paso 6">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Adriana</p>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(`tab-${tab.dataset.tab}`).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
